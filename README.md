@@ -14,7 +14,30 @@ Total Possible Edges = E
 p1,q1,t1
 <Follower 2> <Following 2> <Time taken to send the message> =
 p2,q2,t2
-‹Follower 3> <Following 3> <Time taken to send the message> =
+‹Follower 3> <Following 3> <Time takefunction main(email) {
+    let result;
+
+    const atIndex = email.indexOf('@');
+    const charactersBeforeAt = atIndex >= 3;
+
+    const isValidEmail = charactersBeforeAt && atIndex !== -1 && atIndex < email.length - 1;
+
+    const lastDotIndex = email.lastIndexOf('.');
+    const charactersAfterDot = email.length - (lastDotIndex + 1) >= 2;
+
+    if (isValidEmail && charactersAfterDot) {
+        result = `Welcome ${email} to our site`;
+    } else {
+        result = 'Invalid email';
+    }
+
+    return result;
+}
+
+// Test Cases
+console.log(main('xyz@gmail.com'));  
+console.log(main('xz@gmail.com'));
+n to send the message> =
 p3,q3,3
 ‹Follower N> <Following N> <Time taken to send the message> =
 pn,qn,tn
@@ -214,7 +237,7 @@ class Graph {
 
 ```
 
-### Question2
+## Question2
 
 ```
 
@@ -256,7 +279,7 @@ sample output:
 2 7
 ```
 
-### Answer2
+## Answer2
 
 
 ```
@@ -314,7 +337,7 @@ const result = getMembersToBlock(N, members, E, edges, followerA, followingB);
 console.log(result.join(' '));
 
 ```
-#### Question3
+## Question3
 
 ```
 Find Reachability
@@ -357,7 +380,7 @@ sample output
 1
 ```
 
-#### Answer3
+## Answer3
 
 ```
 function canReach(N, members, E, edges, follower, following) {
